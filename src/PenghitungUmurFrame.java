@@ -46,7 +46,7 @@ public class PenghitungUmurFrame extends javax.swing.JFrame {
         txtUmur = new javax.swing.JTextField();
         hariUlangTahunBerikutnya = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        TextAreaPeristiwa = new javax.swing.JTextArea();
+        txtAreaPeristiwa = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         btnHitung = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -60,14 +60,20 @@ public class PenghitungUmurFrame extends javax.swing.JFrame {
 
         jLabel4.setText("Hari Ulang Tahun berikutnya");
 
-        TextAreaPeristiwa.setColumns(20);
-        TextAreaPeristiwa.setRows(5);
-        TextAreaPeristiwa.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                TextAreaPeristiwaPropertyChange(evt);
+        hariUlangTahunBerikutnya.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hariUlangTahunBerikutnyaActionPerformed(evt);
             }
         });
-        jScrollPane1.setViewportView(TextAreaPeristiwa);
+
+        txtAreaPeristiwa.setColumns(20);
+        txtAreaPeristiwa.setRows(5);
+        txtAreaPeristiwa.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                txtAreaPeristiwaPropertyChange(evt);
+            }
+        });
+        jScrollPane1.setViewportView(txtAreaPeristiwa);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -226,7 +232,7 @@ public class PenghitungUmurFrame extends javax.swing.JFrame {
                 }        // TODO add your handling code here:
     }//GEN-LAST:event_btnHitungActionPerformed
 
-    private void TextAreaPeristiwaPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_TextAreaPeristiwaPropertyChange
+    private void txtAreaPeristiwaPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_txtAreaPeristiwaPropertyChange
  stopFetching = true;
  if (peristiwaThread != null && peristiwaThread.isAlive()) {
 peristiwaThread.interrupt();
@@ -234,11 +240,15 @@ peristiwaThread.interrupt();
 txtAreaPeristiwa.setText("");
         txtUmur.setText("");
         hariUlangTahunBerikutnya.setText("");        // TODO add your handling code here:
-    }//GEN-LAST:event_TextAreaPeristiwaPropertyChange
+    }//GEN-LAST:event_txtAreaPeristiwaPropertyChange
 
     private void btnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKeluarActionPerformed
   System.exit(0);        // TODO add your handling code here:
     }//GEN-LAST:event_btnKeluarActionPerformed
+
+    private void hariUlangTahunBerikutnyaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hariUlangTahunBerikutnyaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hariUlangTahunBerikutnyaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -276,7 +286,6 @@ txtAreaPeristiwa.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea TextAreaPeristiwa;
     private javax.swing.JButton btnHitung;
     private javax.swing.JButton btnKeluar;
     private com.toedter.calendar.JDateChooser dateChooserTanggalLahir;
@@ -288,6 +297,7 @@ txtAreaPeristiwa.setText("");
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea txtAreaPeristiwa;
     private javax.swing.JTextField txtUmur;
     // End of variables declaration//GEN-END:variables
 }
