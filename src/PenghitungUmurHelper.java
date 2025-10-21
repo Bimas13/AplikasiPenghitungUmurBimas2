@@ -26,6 +26,9 @@ import java.util.function.Supplier;
 import javax.swing.JTextArea;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class PenghitungUmurHelper {
     
@@ -189,7 +192,7 @@ public class PenghitungUmurHelper {
         }
     }
 
-    String hitungUmurDetail(LocalDate lahir, LocalDate sekarang) {
+    String txthitungUmurDetail(LocalDate lahir, LocalDate sekarang) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
